@@ -16,10 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup shellspec
-        run: curl -fsSL https://git.io/shellspec | sh
+      - name: Install ShellSpec
+        run: echo "y" | curl -fsSL https://git.io/shellspec | sh
         shell: bash
-      
+
       - name: Shell test
         run: shellspec
         shell: bash
