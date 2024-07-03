@@ -15,8 +15,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup shellspec
+        run: curl -fsSL https://git.io/shellspec | sh
+        shell: bash
+      
       - name: Shell test
-        run: |
-          chmod +x ./src/test_script.sh
-          ./src/test_script.sh
+        run: shellspec
         shell: bash
