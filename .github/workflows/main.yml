@@ -12,13 +12,10 @@ jobs:
   main:
     name: Unit tests
     runs-on: ubuntu-latest
+    container: shellspec/shellspec
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install ShellSpec
-        run: echo "y" | curl -fsSL https://git.io/shellspec | sh
-        shell: bash
 
       - name: Shell test
         run: shellspec
